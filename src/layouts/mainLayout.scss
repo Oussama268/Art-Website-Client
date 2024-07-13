@@ -1,0 +1,128 @@
+html,body{
+
+    margin: 0;
+
+}
+
+//navigation bar Css
+#NavBar {
+    //general
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: #DCDDE1;
+        background-color: rgba(0, 0, 0, 0.9);
+
+    //all items hover function
+        #search:hover,#account:hover,.item:hover,#add:hover,#arrow:hover{
+            
+            color: #159895;
+            transition: 0.3s;
+            cursor: pointer;
+            
+        }
+    
+    //search css
+
+        //general
+            #search{
+                
+                display: flex;
+                flex-direction: row;
+            }
+
+            #search-input{
+
+                transition-duration: 0.2s;
+                width: 0%;
+                opacity: 0;
+                color: rgb(13, 79, 70);
+                font-size: medium;
+                font-weight: bold;
+            }
+
+        //hover
+            #search:hover{
+
+                #search-bar{
+                    
+                    border: solid black;
+
+                }
+    
+                #search-input{
+                    
+                    opacity: 1;
+                    width: 100%;
+                    
+                }
+                
+            }
+    
+    
+        //click
+            #search-input:focus {
+
+                opacity: 1;
+                width: 100%;
+
+            }
+            
+    //account
+        //general
+            #account{
+
+                padding: 10px;
+                overflow-y: visible;
+                position: relative;
+                
+            }
+
+            #drop-down{
+                
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background:#27262E;
+                z-index: 1; 
+            
+            }
+            
+            .line{
+
+                margin: 0%;
+                padding: 0%;
+                height: 5px;
+                border: none;
+                background-color: #A0153E;
+
+            }
+
+            .items{
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 100px;
+
+            }
+            
+        //hover
+            #account:hover {
+
+                #drop-down, #drop-down:hover{
+
+                    display: block;
+                    color: #DCDDE1;
+            
+                }
+            }
+            
+    
+}
+
+

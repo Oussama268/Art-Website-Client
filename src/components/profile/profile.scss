@@ -1,0 +1,68 @@
+
+h1{
+    color: var(--Text-Color);
+}
+
+.stats{
+    margin-right: 40px;
+}
+
+.background-overlay {
+    position: absolute;
+    top: -36px;
+    left: -26.6px;
+    right: -24px;
+    bottom: -22px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0);  /* Transparent by default */
+    transition: background 0.2s;  /* Smooth transition */
+  }
+
+
+.iconBox{
+    transform: translate(-50%, -50%);
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.pfpContainer {
+    position: absolute;
+    transform: translate(-48.5%, 85%);
+    top: 50%;
+    left: 50%;  /* Needed to ensure child element is positioned correctly */
+    width: 100px;
+    height: 100px;
+    z-index: 5;
+     
+  }
+
+  
+.pfpContainer:hover .iconBox {
+    display: block;  /* Becomes visible on hover */
+    cursor: pointer;  /* Cursor changes to indicate it's clickable */
+  }
+
+.pfpContainer:hover .background-overlay {
+    background: rgba(0, 0, 0, 0.4);  /* Darkens the background with a semi-transparent overlay */
+  }
+
+
+.pfpIcon{
+   
+    color: #2b6cb0;
+    margin-left: 13px;
+    margin-bottom: -11px;
+    
+
+}
+
+
+//changing pfp and cover pop up
+.model{
+    height: 500px;
+    
+
+
+}
