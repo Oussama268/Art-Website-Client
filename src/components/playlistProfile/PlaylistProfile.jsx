@@ -16,12 +16,12 @@ function PlaylistProfile() {
 
     useEffect(() => {
 
-        axios.get(`http://ArtUniverse-api.onrender.com/playlists/playlistId/${title}`)
+        axios.get(`https://artuniverse-api.onrender.com/playlists/playlistId/${title}`)
         .then((response) => {
             console.log(response.data)
             const playlistId = response.data.playlistId
 
-            axios.get(`http://ArtUniverse-api.onrender.com/playlists/posts/${playlistId}`)
+            axios.get(`https://artuniverse-api.onrender.com/playlists/posts/${playlistId}`)
             .then((response) => {
 
                 console.log(response.data)

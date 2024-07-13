@@ -57,7 +57,7 @@ export default function MainLayout() {
   };
 
   useEffect(() => {
-    axios.get(`http://ArtUniverse-api.onrender.com/tags/`)
+    axios.get(`https://artuniverse-api.onrender.com/tags/`)
         .then((result) => {
             console.log("THE TAAAAAAAAAGS :",result.data);
             setTags( Object.keys(result.data));
@@ -91,7 +91,7 @@ export default function MainLayout() {
             navigate("/sign")
 
         }else{
-            axios.get(`http://ArtUniverse-api.onrender.com/users/${userId}`)
+            axios.get(`https://artuniverse-api.onrender.com/users/${userId}`)
             .then( (response) => {
 
                 console.log(response.data)

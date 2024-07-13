@@ -27,7 +27,7 @@ function Playlist({playlistId, playlist}) {
 
         console.log(firstpostId)
 
-        axios.get(`http://ArtUniverse-api.onrender.com/posts/${firstpostId}`)
+        axios.get(`https://artuniverse-api.onrender.com/posts/${firstpostId}`)
         .then((response) => {
 
             console.log(response.data)

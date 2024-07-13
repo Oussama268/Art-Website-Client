@@ -84,7 +84,7 @@ export default function Profile() {
     formData.append('image', file); // Append the image file to the FormData
     coverModelClose()
     try {
-      const response = await axios.post(`http://ArtUniverse-api.onrender.com/profiles/cover/${userId}`, formData, {
+      const response = await axios.post(`https://artuniverse-api.onrender.com/profiles/cover/${userId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data', // Set the correct content type
         },
@@ -159,7 +159,7 @@ export default function Profile() {
     formData.append('image', pfp); // Append the image file to the FormData
     pfpModelClose()
     try {
-      const response = await axios.post(`http://ArtUniverse-api.onrender.com/profiles/pfp/${userId}`, formData, {
+      const response = await axios.post(`https://artuniverse-api.onrender.com/profiles/pfp/${userId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data', // Set the correct content type
         },
@@ -208,7 +208,7 @@ export default function Profile() {
 
     descrModelClose()
     
-      await axios.post(`http://ArtUniverse-api.onrender.com/profiles/description/${profileId}`, {description: newDescription})
+      await axios.post(`https://artuniverse-api.onrender.com/profiles/description/${profileId}`, {description: newDescription})
       .then((response) => {
       
 
@@ -240,7 +240,7 @@ export default function Profile() {
 
   const heartProfile = async() => {
     if(!islike){
-    await axios.post(`http://ArtUniverse-api.onrender.com/profiles/like/${profileId}`, {userId: userId,islike: islike})
+    await axios.post(`https://artuniverse-api.onrender.com/profiles/like/${profileId}`, {userId: userId,islike: islike})
     .then((response) => {
       console.log(islike)
 
@@ -257,7 +257,7 @@ export default function Profile() {
 
     }else{
 
-      await axios.post(`http://ArtUniverse-api.onrender.com/profiles/like/${profileId}`, {userId: userId,islike: islike})
+      await axios.post(`https://artuniverse-api.onrender.com/profiles/like/${profileId}`, {userId: userId,islike: islike})
     .then((response) => {
       console.log(islike)
       console.log(user.hearts_count)
@@ -287,13 +287,13 @@ export default function Profile() {
     useEffect( () => {
             console.log(userId)
         
-            axios.get(`http://ArtUniverse-api.onrender.com/profiles/${username}`)
+            axios.get(`https://artuniverse-api.onrender.com/profiles/${username}`)
             .then(response => {
              
               const data = response.data;
               const firstKey = Object.keys(data)[0];
               console.log(firstKey)
-              axios.get(`http://ArtUniverse-api.onrender.com/posts/userPosts/${firstKey}`)
+              axios.get(`https://artuniverse-api.onrender.com/posts/userPosts/${firstKey}`)
               .then((response) => {
 
                  
@@ -301,7 +301,7 @@ export default function Profile() {
 
               })
 
-              axios.get(`http://ArtUniverse-api.onrender.com/playlists/${firstKey}`)
+              axios.get(`https://artuniverse-api.onrender.com/playlists/${firstKey}`)
               .then((response) => {
 
                 console.log(response.data)

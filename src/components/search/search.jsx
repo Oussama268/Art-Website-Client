@@ -28,7 +28,7 @@ console.log(tag);
   }, [userId]);
 
   useEffect(() => {
-    axios.get(`http://ArtUniverse-api.onrender.com/posts/tags/${tag}`)
+    axios.get(`https://artuniverse-api.onrender.com/posts/tags/${tag}`)
       .then(response => {
         
         console.log("Fetched data:", response.data);
