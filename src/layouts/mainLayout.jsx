@@ -65,6 +65,8 @@ export default function MainLayout() {
         .catch((error) => {
             console.error('Error fetching tags:', error);
         });
+        
+        console.log("API", `${import.meta.env.API_URL}`);
 }, []);
 
 
@@ -96,7 +98,7 @@ export default function MainLayout() {
 
                 console.log(response.data)
                 navigate(`/profile/${response.data.username}`)
-                window.location.reload()
+                
 
             }
             )
