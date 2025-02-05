@@ -19,7 +19,7 @@ export default function Sign(){
                         <Image className='logo' src={logo}  alt='logo'/>
                     
                         <h2>
-                            --Company Name--
+                            ArtUniverse
                         </h2>
                     </div>
                     <p className='commercial'>
