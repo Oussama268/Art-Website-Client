@@ -4,7 +4,7 @@ import {jwtDecode} from 'jwt-decode';
 import MiniArt from '../../components/miniArt/MiniArt';
 import { Box, Image } from '@chakra-ui/react';
 import axios from "axios"
-import Loading from'./loading.gif'
+import Loading from '../../components/miniArt/loading.gif'
 
 export default function Home() {
   const { userId, setUserId } = useUserId();
@@ -42,7 +42,7 @@ export default function Home() {
       
     { 
     
-    Object.keys(posts).length === 0 ? (     <><Image src={""} fallbackSrc={Loading} objectFit="cover" width="800px" height="800px" display={"flex"} justifyContent={"center"} alignContent={"center"} /></>   ) 
+    Object.keys(posts).length === 0 ? (     <><Image src={Loading} fallbackSrc={Loading} objectFit="cover" width="800px" height="800px" display={"flex"} justifyContent={"center"} alignContent={"center"} /></>   ) 
 
     : 
 
