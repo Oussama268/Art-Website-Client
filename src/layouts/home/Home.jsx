@@ -5,6 +5,8 @@ import MiniArt from '../../components/miniArt/MiniArt';
 import { Box, Image, Skeleton, Stack } from '@chakra-ui/react';
 import axios from "axios"
 import Loading from '../../components/miniArt/loading.gif'
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+
 
 export default function Home() {
   const { userId, setUserId } = useUserId();
@@ -57,14 +59,23 @@ export default function Home() {
 
 
     (
-
-    Object.keys(posts).map(key => {
+  <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+    <Masonry gutter="10px">
+    {Object.keys(posts).map(key => {
       const value = posts[key];
       const postId = key
       
 
-      return  <MiniArt postId={postId} post={value} />;
-    })
+      return  (
+        <>
+            <MiniArt postId={postId} post={value} />
+
+        </>
+      )
+    })}
+
+    </Masonry>
+  </ResponsiveMasonry>
 
     )
 
