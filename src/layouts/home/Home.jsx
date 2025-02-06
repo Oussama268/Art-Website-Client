@@ -43,7 +43,7 @@ export default function Home() {
     { 
     
     Object.keys(posts).length === 0 ? (     
-        <Stack display={"flex"} flexDirection="row" alignItems="center" justifyContent="space-evenly"  flexWrap="wrap">
+        <Stack gap={"5%"} display={"flex"} flexDirection="row" alignItems="center" justifyContent="space-evenly"  flexWrap="wrap">
           
             {[...Array(16)].map((_, i) => (
               <Skeleton key={i} height="300px" width="300px" />
