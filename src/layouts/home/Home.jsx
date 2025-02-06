@@ -42,7 +42,7 @@ export default function Home() {
       
     { 
     
-    Object.keys(posts).length === 0 ? (     <Image srcSet={Loading} />   ) 
+    Object.keys(posts).length === 0 ? (     <><Image srcSet={Loading}  width="800px" height="800px" display={"flex"} justifyContent={"center"} alignContent={"center"} /></>   ) 
 
     : 
 
