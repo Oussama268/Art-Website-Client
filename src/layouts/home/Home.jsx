@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useUserId } from '../../config/UserIdcontext';
 import {jwtDecode} from 'jwt-decode';
 import MiniArt from '../../components/miniArt/MiniArt';
-import { Box } from '@chakra-ui/react';
+import { Box, Image } from '@chakra-ui/react';
 import axios from "axios"
-
+import Loading from'./loading.gif'
 
 export default function Home() {
   const { userId, setUserId } = useUserId();
@@ -42,7 +42,7 @@ export default function Home() {
       
     { 
     
-    posts.length === "" ? (     <h1>Wait</h1>     ) 
+    Object.keys(posts).length === 0 ? (     <Image src={Loading} />   ) 
 
     : 
 
@@ -52,8 +52,7 @@ export default function Home() {
     Object.keys(posts).map(key => {
       const value = posts[key];
       const postId = key
-      console.log("Key:", key);
-      console.log("Value:", value);
+      
 
       return  <MiniArt postId={postId} post={value} />;
     })
