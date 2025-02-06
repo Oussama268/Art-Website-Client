@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useUserId } from '../../config/UserIdcontext';
 import {jwtDecode} from 'jwt-decode';
 import MiniArt from '../../components/miniArt/MiniArt';
-import { Box, Image } from '@chakra-ui/react';
+import { Box, Image, Skeleton, Stack } from '@chakra-ui/react';
 import axios from "axios"
 import Loading from '../../components/miniArt/loading.gif'
 
@@ -42,7 +42,16 @@ export default function Home() {
       
     { 
     
-    Object.keys(posts).length === 0 ? (     <><h1>Wait</h1></>   ) 
+    Object.keys(posts).length === 0 ? (     
+        <Stack>
+          <Stack>
+            {[...Array(16)].map((_, i) => (
+              <Skeleton key={i} height="400px" width="400px" />
+            ))}
+          </Stack>
+
+        </Stack>    
+    ) 
 
     : 
 
