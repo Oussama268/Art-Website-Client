@@ -42,7 +42,7 @@ export default function Home() {
       
     { 
     
-    Object.keys(posts).length === 0 ? (     <><Image src={Loading} fallbackSrc={Loading} objectFit="cover" width="800px" height="800px" display={"flex"} justifyContent={"center"} alignContent={"center"} /></>   ) 
+    Object.keys(posts).length === 0 ? (     <><h1>Wait</h1></>   ) 
 
     : 
 
