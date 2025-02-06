@@ -25,13 +25,12 @@ function Playlist({playlistId, playlist}) {
 
         const firstpostId = Object.keys(playlist.postsId)[0]
 
-        console.log(firstpostId)
+        
 
         axios.get(`https://artuniverse-api.onrender.com/posts/${firstpostId}`)
         .then((response) => {
 
-            console.log(response.data)
-            console.log(response.data.postImg)
+            
             const imageRefernce = ref(imageDb, response.data.postImg)
             
             getDownloadURL(imageRefernce)

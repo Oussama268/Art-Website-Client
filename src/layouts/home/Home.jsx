@@ -17,20 +17,20 @@ export default function Home() {
       return;
     }
     const decodedToken = jwtDecode(token);
-    console.log('User ID:', decodedToken.userId);
+    
     setUserId(decodedToken.userId);
   }, [userId]);
 
   useEffect(() => {
     axios.get(`https://artuniverse-api.onrender.com/posts`)
       .then(response => {
-        console.log("Fetched data:", response.data);
+        
         const items = response.data;
         
         return items
       }).then(items=>{
         setPosts(items);
-        console.log(posts)
+        
       })
       .catch(error => console.error('Error fetching posts:', error));
   }, []);
@@ -42,7 +42,7 @@ export default function Home() {
       
     { 
     
-    Object.keys(posts).length === 0 ? (     <><Image src={Loading} fallbackSrc={Loading} objectFit="cover"  width="800px" height="800px" display={"flex"} justifyContent={"center"} alignContent={"center"} /></>   ) 
+    Object.keys(posts).length === 0 ? (     <><Image src={""} fallbackSrc={Loading} objectFit="cover" width="800px" height="800px" display={"flex"} justifyContent={"center"} alignContent={"center"} /></>   ) 
 
     : 
 

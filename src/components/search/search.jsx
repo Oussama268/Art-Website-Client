@@ -14,8 +14,7 @@ export default function Search() {
   const {list} = useParams()
   const tag = list.split(',');
 
-console.log(tag);
-  console.log('params:',tag)
+  
   useEffect(() => {
     const token = localStorage.getItem('authToken');
     if (!token) {
@@ -23,7 +22,7 @@ console.log(tag);
       return;
     }
     const decodedToken = jwtDecode(token);
-    console.log('User ID:', decodedToken.userId);
+    
     setUserId(decodedToken.userId);
   }, [userId]);
 
@@ -31,13 +30,13 @@ console.log(tag);
     axios.get(`https://artuniverse-api.onrender.com/posts/tags/${tag}`)
       .then(response => {
         
-        console.log("Fetched data:", response.data);
+        
         const items = response.data;
         
         return items
       }).then(items=>{
         setPosts(items);
-        console.log(posts)
+        
       })
       .catch(error => console.error('Error fetching posts:', error));
   }, []);
@@ -59,8 +58,7 @@ console.log(tag);
     Object.keys(posts).map(key => {
       const value = posts[key];
       const postId = key
-      console.log("Key:", key);
-      console.log("Value:", value);
+      
 
       return  <MiniArt postId={postId} post={value} />;
     })

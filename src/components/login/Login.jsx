@@ -38,7 +38,7 @@ export default function Login() {
               const { token } = response.data;
               localStorage.setItem('authToken', token);
               const decodedToken = jwtDecode(token);
-              console.log('User ID:', decodedToken.userId);
+              
               setUserId(decodedToken.userId);
               navigate('/')
               
@@ -67,7 +67,7 @@ export default function Login() {
         
         return;
       }
-      console.log(token)
+   
 
 
     },[])

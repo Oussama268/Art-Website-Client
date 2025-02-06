@@ -30,7 +30,7 @@ export default function MiniArt({postId , post }){
             newLike==0?
               setNewLike(post.likes.counter +1):
               setNewLike(0)
-              console.log("Like successful:", res.data); 
+               
           })
           .catch(error => {
               console.error("Error in liking post:", error.message); 
@@ -43,7 +43,7 @@ export default function MiniArt({postId , post }){
           newLike==0?
           setNewLike(post.likes.counter -1):
           setNewLike(0)
-            console.log("unLike successful:", res.data); 
+            
         })
         .catch(error => {
             console.error("Error in liking post:", error.message); 
@@ -75,7 +75,7 @@ export default function MiniArt({postId , post }){
       getDownloadURL(bgImageref)
         .then((url) => {
           setbgImage(url);
-          console.log('id:',likeBy.includes(userId.userId))
+          
         })
     }
   }, [bgImageref]);

@@ -37,7 +37,7 @@ export default function Post() {
           suggestion.toLowerCase().startsWith(value.toLowerCase())
         );
         setFilteredSuggestions(filtered);
-        console.log(filteredSuggestions)
+        
       } else {
         setFilteredSuggestions([]);
       }
@@ -52,7 +52,7 @@ export default function Post() {
     const handleSuggestionClick = (suggestion) => {
       if (!selectedTerms.includes(suggestion)) {
         setTags([...tags, suggestion]);
-        console.log(...selectedTerms,selectedTerms)
+        
       }
       setCurrentTag('');
       setFilteredSuggestions([]);
@@ -62,11 +62,11 @@ export default function Post() {
     useEffect(() => {
       axios.get(`https://artuniverse-api.onrender.com/tags/`)
           .then((result) => {
-              console.log("THE TAAAAAAAAAGS :",result.data);
+             
               setMyTags( Object.keys(result.data));
           })
           .catch((error) => {
-              console.error('Error fetching tags:', error);
+              
           });
   }, []);
 /*miiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii*/
@@ -197,9 +197,7 @@ export default function Post() {
             return accumulator;
         }, {});
 
-        console.log(postImg)
-
-        console.log(tagsObject)
+        
         
         const formData = new FormData();
         formData.append('userId', userId);
@@ -208,7 +206,7 @@ export default function Post() {
         formData.append('postImg', postImg);
         
         onClose()
-        console.log(formData)
+        
 
         let resolvePromise; 
         let rejectPromise; 
@@ -233,7 +231,7 @@ export default function Post() {
         })
         .then((response) => {
            
-            console.log(response.data.message)
+          
             if(response.data.message){
               resolvePromise(200)
 
@@ -245,7 +243,7 @@ export default function Post() {
         })
         .catch((error) => {
 
-          console.log(error)
+          
         })
 
 

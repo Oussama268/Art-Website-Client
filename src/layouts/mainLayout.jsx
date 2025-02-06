@@ -46,7 +46,7 @@ export default function MainLayout() {
     if (!selectedTerms.includes(suggestion)) {
       setSelectedTerms([...selectedTerms, suggestion]);
       inputRef.current.focus();
-      console.log('the list',selectedTerms)
+     
     }
     setSearchTerm('');
     setFilteredSuggestions([]);
@@ -59,14 +59,14 @@ export default function MainLayout() {
   useEffect(() => {
     axios.get(`https://artuniverse-api.onrender.com/tags/`)
         .then((result) => {
-            console.log("THE TAAAAAAAAAGS :",result.data);
+            
             setTags( Object.keys(result.data));
         })
         .catch((error) => {
             console.error('Error fetching tags:', error);
         });
         
-        console.log("API", `${import.meta.env.API_URL}`);
+        
 }, []);
 
 
@@ -96,7 +96,7 @@ export default function MainLayout() {
             axios.get(`https://artuniverse-api.onrender.com/users/${userId}`)
             .then( (response) => {
 
-                console.log(response.data)
+              
                 navigate(`/profile/${response.data.username}`)
                 
 

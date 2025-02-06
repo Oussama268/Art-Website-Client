@@ -37,7 +37,7 @@ export default function SignUp() {
             const { token } = response.data;
             localStorage.setItem('authToken', token);
             const decodedToken = jwtDecode(token);
-            console.log('User ID:', decodedToken.userId);
+            
             setUserId(decodedToken.userId);
             navigate('/')
         }).catch((error) => {
@@ -59,8 +59,7 @@ export default function SignUp() {
           
           return;
         }
-        console.log(token)
-  
+      
   
       },[])
 

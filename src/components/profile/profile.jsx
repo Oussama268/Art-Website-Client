@@ -90,7 +90,7 @@ export default function Profile() {
         },
       });
       
-      console.log('Image uploaded successfully:', response.data);
+      
       setMessage(response.data.message);
 
       if(response.data.message){
@@ -165,7 +165,7 @@ export default function Profile() {
         },
       });
       
-      console.log('Image uploaded successfully:', response.data);
+      
       setMessage(response.data.message);
 
       if(response.data.message){
@@ -242,15 +242,13 @@ export default function Profile() {
     if(!islike){
     await axios.post(`https://artuniverse-api.onrender.com/profiles/like/${profileId}`, {userId: userId,islike: islike})
     .then((response) => {
-      console.log(islike)
+      
 
-      console.log(user.hearts_count)
-      console.log(fakeHeartsCounter)
-
+      
       islikeSet(true)
-      console.log(islike)
+      
       setFakeHeartsCounter(fakeHeartsCounter + 1)
-      console.log(fakeHeartsCounter)
+     
 
     })
 
@@ -259,14 +257,11 @@ export default function Profile() {
 
       await axios.post(`https://artuniverse-api.onrender.com/profiles/like/${profileId}`, {userId: userId,islike: islike})
     .then((response) => {
-      console.log(islike)
-      console.log(user.hearts_count)
-      console.log(fakeHeartsCounter)
+      
       islikeSet(false)
-      console.log(islike)
-
+     
       setFakeHeartsCounter(fakeHeartsCounter - 1)
-      console.log(fakeHeartsCounter)
+     
 
     })
 
@@ -285,14 +280,14 @@ export default function Profile() {
 
 
     useEffect( () => {
-            console.log(userId)
+          
         
             axios.get(`https://artuniverse-api.onrender.com/profiles/${username}`)
             .then(response => {
              
               const data = response.data;
               const firstKey = Object.keys(data)[0];
-              console.log(firstKey)
+             
               axios.get(`https://artuniverse-api.onrender.com/posts/userPosts/${firstKey}`)
               .then((response) => {
 
@@ -304,7 +299,7 @@ export default function Profile() {
               axios.get(`https://artuniverse-api.onrender.com/playlists/${firstKey}`)
               .then((response) => {
 
-                console.log(response.data)
+                
                 setPlaylists(response.data)
 
              })
@@ -318,7 +313,7 @@ export default function Profile() {
             .then((data) => {
               
               
-              console.log(data)
+             
               if(data.followers && data.followers[userId]){
                   islikeSet(true)
 
@@ -326,10 +321,7 @@ export default function Profile() {
                 islikeSet(false)
 
               }
-              console.log(islike)
-              console.log(data)
-              console.log(data.profileImg)
-              console.log(data.backgroundImg)
+      
               
               setUser(data);
               setNewDescription(data.description)

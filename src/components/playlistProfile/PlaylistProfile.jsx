@@ -18,13 +18,13 @@ function PlaylistProfile() {
 
         axios.get(`https://artuniverse-api.onrender.com/playlists/playlistId/${title}`)
         .then((response) => {
-            console.log(response.data)
+          
             const playlistId = response.data.playlistId
 
             axios.get(`https://artuniverse-api.onrender.com/playlists/posts/${playlistId}`)
             .then((response) => {
 
-                console.log(response.data)
+                
                 setPosts(response.data)
             })
 
@@ -55,8 +55,7 @@ function PlaylistProfile() {
         Object.keys(posts).map(key => {
           const value = posts[key];
           const postId = key
-          console.log("Key:", key);
-          console.log("Value:", value);
+          
 
           return  <MiniArt postId={postId} post={value} />;
         })
