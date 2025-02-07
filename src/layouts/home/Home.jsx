@@ -43,19 +43,22 @@ export default function Home() {
       
     { 
     
-    Object.keys(posts).length === 0 ? (     
-        <Stack gap={"5%"} display={"flex"} flexDirection="row" alignItems="center" justifyContent="space-evenly"  flexWrap="wrap">
-          
-            {[...Array(16)].map((_, i) => (
-              <Skeleton key={i} height="300px" width="300px" />
-            ))}
-          
+    Object.keys(posts).length === 0 ? (
 
-        </Stack>    
-    ) 
+        [...Array(16)].map((_, i) => (
+          <Stack
+            key={i} 
+            position="relative"
+            width="fit-content"
+            height="fit-content"
+            margin="1%"
+            _hover={{ "& > .info": { display: "flex" } }}
+          >
+            <Skeleton height="300px" width="300px" />
+          </Stack>
+        ))
 
-    : 
-
+    ) :
 
     (
   
