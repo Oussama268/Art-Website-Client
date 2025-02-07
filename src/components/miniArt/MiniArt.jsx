@@ -1,7 +1,7 @@
 import './MiniArt.scss'
 import Loading from'./loading.gif'
 import Loadingpfp from'./loadingpfp.png'
-import { Image ,Box, background, Popover, PopoverTrigger} from '@chakra-ui/react'
+import { Image ,Box} from '@chakra-ui/react'
 import { ref, getDownloadURL } from 'firebase/storage'
 import { useEffect, useState } from 'react'
 import { imageDb } from '../../config/config'

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useUserId } from '../../config/UserIdcontext';
 import {jwtDecode} from 'jwt-decode';
 import MiniArt from '../../components/miniArt/MiniArt';
-import { Box, Image, Skeleton, Stack } from '@chakra-ui/react';
+import { Box, Skeleton, Stack } from '@chakra-ui/react';
 import axios from "axios"
-import Loading from '../../components/miniArt/loading.gif'
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 
@@ -60,7 +59,7 @@ export default function Home() {
 
     (
   <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-    <Masonry gutter="10px">
+    <Masonry gutter="50px">
     {Object.keys(posts).map(key => {
       const value = posts[key];
       const postId = key
