@@ -58,9 +58,8 @@ export default function Home() {
 
 
     (
-  <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
-    <Masonry gutter="50px">
-    {Object.keys(posts).map(key => {
+  
+    Object.keys(posts).map(key => {
       const value = posts[key];
       const postId = key
       
@@ -71,10 +70,9 @@ export default function Home() {
 
         </>
       )
-    })}
+    })
 
-    </Masonry>
-  </ResponsiveMasonry>
+  
 
     )
 
