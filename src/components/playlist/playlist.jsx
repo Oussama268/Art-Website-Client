@@ -27,7 +27,7 @@ function Playlist({playlistId, playlist}) {
 
         
 
-        axios.get(`${process.env.API_LINK}/posts/${firstpostId}`)
+        axios.get(`art-website-server-production.up.railway.app/posts/${firstpostId}`)
         .then((response) => {
 
             

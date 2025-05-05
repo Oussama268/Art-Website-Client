@@ -23,7 +23,7 @@ export default function Home() {
   }, [userId]);
 
   useEffect(() => {
-    axios.get(`${process.env.API_LINK}/posts`)
+    axios.get(`art-website-server-production.up.railway.app/posts`)
       .then(response => {
         
         const items = response.data;

@@ -30,7 +30,7 @@ export default function Login() {
         e.preventDefault();
 
         
-            await axios.post('${process.env.API_LINK}/users/login', {
+            await axios.post('art-website-server-production.up.railway.app/users/login', {
                 email: email,
                 password: password
             }).then( (response) => {

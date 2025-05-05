@@ -25,7 +25,7 @@ export default function MiniArt({postId , post }){
     const imageref = ref(imageDb, post.postImg)
 
     const Like = () => {
-      axios.post(`${process.env.API_LINK}/posts/like/${postId}`, { userId: userId.userId })
+      axios.post(`art-website-server-production.up.railway.app/posts/like/${postId}`, { userId: userId.userId })
           .then((res) => {
             newLike==0?
               setNewLike(post.likes.counter +1):
@@ -38,7 +38,7 @@ export default function MiniArt({postId , post }){
   };
 
   const unLike = () => {
-    axios.post(`${process.env.API_LINK}/posts/unlike/${postId}`, { userId: userId.userId })
+    axios.post(`art-website-server-production.up.railway.app/posts/unlike/${postId}`, { userId: userId.userId })
         .then((res) => {
           newLike==0?
           setNewLike(post.likes.counter -1):
@@ -58,7 +58,7 @@ export default function MiniArt({postId , post }){
   }
     
     useEffect(() => {
-      axios.get(`${process.env.API_LINK}/users/${post.userId}`)
+      axios.get(`art-website-server-production.up.railway.app/users/${post.userId}`)
           .then((result) => {
               setlikeBy(Object.keys(post.likes.likeBy))
               setUser(result.data);

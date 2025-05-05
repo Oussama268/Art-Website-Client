@@ -57,7 +57,7 @@ export default function MainLayout() {
   };
 
   useEffect(() => {
-    axios.get(`${process.env.API_LINK}/tags/`)
+    axios.get(`art-website-server-production.up.railway.app/tags/`)
         .then((result) => {
             
             setTags( Object.keys(result.data));
@@ -93,7 +93,7 @@ export default function MainLayout() {
             navigate("/sign")
 
         }else{
-            axios.get(`${process.env.API_LINK}/users/${userId}`)
+            axios.get(`art-website-server-production.up.railway.app/users/${userId}`)
             .then( (response) => {
 
               
