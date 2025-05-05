@@ -30,7 +30,7 @@ export default function SignUp() {
       e.preventDefault();
       
         await axios.post(
-          'art-website-server-production.up.railway.app/users/sign',
+          'https://art-website-server-production.up.railway.app/users/sign',
           { username: username, email: email, password: password }
          
         ).then((response) => {

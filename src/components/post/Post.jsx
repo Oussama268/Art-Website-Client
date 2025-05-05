@@ -60,7 +60,7 @@ export default function Post() {
 
 
     useEffect(() => {
-      axios.get(`art-website-server-production.up.railway.app/tags/`)
+      axios.get(`https://art-website-server-production.up.railway.app/tags/`)
           .then((result) => {
              
               setMyTags( Object.keys(result.data));
@@ -224,7 +224,7 @@ export default function Post() {
 
         
 
-        await axios.post("art-website-server-production.up.railway.app/posts/create", formData, {
+        await axios.post("https://art-website-server-production.up.railway.app/posts/create", formData, {
           headers: {
             'Content-Type': 'multipart/form-data', // Set the correct content type
           },

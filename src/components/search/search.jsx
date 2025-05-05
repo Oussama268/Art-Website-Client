@@ -27,7 +27,7 @@ export default function Search() {
   }, [userId]);
 
   useEffect(() => {
-    axios.get(`art-website-server-production.up.railway.app/posts/tags/${tag}`)
+    axios.get(`https://art-website-server-production.up.railway.app/posts/tags/${tag}`)
       .then(response => {
         
         

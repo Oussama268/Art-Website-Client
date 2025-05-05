@@ -16,12 +16,12 @@ function PlaylistProfile() {
 
     useEffect(() => {
 
-        axios.get(`art-website-server-production.up.railway.app/playlists/playlistId/${title}`)
+        axios.get(`https://art-website-server-production.up.railway.app/playlists/playlistId/${title}`)
         .then((response) => {
           
             const playlistId = response.data.playlistId
 
-            axios.get(`art-website-server-production.up.railway.app/playlists/posts/${playlistId}`)
+            axios.get(`https://art-website-server-production.up.railway.app/playlists/posts/${playlistId}`)
             .then((response) => {
 
                 

@@ -84,7 +84,7 @@ export default function Profile() {
     formData.append('image', file); // Append the image file to the FormData
     coverModelClose()
     try {
-      const response = await axios.post(`art-website-server-production.up.railway.app/profiles/cover/${userId}`, formData, {
+      const response = await axios.post(`https://art-website-server-production.up.railway.app/profiles/cover/${userId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data', // Set the correct content type
         },
@@ -159,7 +159,7 @@ export default function Profile() {
     formData.append('image', pfp); // Append the image file to the FormData
     pfpModelClose()
     try {
-      const response = await axios.post(`art-website-server-production.up.railway.app/profiles/pfp/${userId}`, formData, {
+      const response = await axios.post(`https://art-website-server-production.up.railway.app/profiles/pfp/${userId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data', // Set the correct content type
         },
@@ -208,7 +208,7 @@ export default function Profile() {
 
     descrModelClose()
     
-      await axios.post(`art-website-server-production.up.railway.app/profiles/description/${profileId}`, {description: newDescription})
+      await axios.post(`https://art-website-server-production.up.railway.app/profiles/description/${profileId}`, {description: newDescription})
       .then((response) => {
       
 
@@ -240,7 +240,7 @@ export default function Profile() {
 
   const heartProfile = async() => {
     if(!islike){
-    await axios.post(`art-website-server-production.up.railway.app/profiles/like/${profileId}`, {userId: userId,islike: islike})
+    await axios.post(`https://art-website-server-production.up.railway.app/profiles/like/${profileId}`, {userId: userId,islike: islike})
     .then((response) => {
       
 
@@ -255,7 +255,7 @@ export default function Profile() {
 
     }else{
 
-      await axios.post(`art-website-server-production.up.railway.app/profiles/like/${profileId}`, {userId: userId,islike: islike})
+      await axios.post(`https://art-website-server-production.up.railway.app/profiles/like/${profileId}`, {userId: userId,islike: islike})
     .then((response) => {
       
       islikeSet(false)
@@ -282,13 +282,13 @@ export default function Profile() {
     useEffect( () => {
           
         
-            axios.get(`art-website-server-production.up.railway.app/profiles/${username}`)
+            axios.get(`https://art-website-server-production.up.railway.app/profiles/${username}`)
             .then(response => {
              
               const data = response.data;
               const firstKey = Object.keys(data)[0];
              
-              axios.get(`art-website-server-production.up.railway.app/posts/userPosts/${firstKey}`)
+              axios.get(`https://art-website-server-production.up.railway.app/posts/userPosts/${firstKey}`)
               .then((response) => {
 
                  
@@ -296,7 +296,7 @@ export default function Profile() {
 
               })
 
-              axios.get(`art-website-server-production.up.railway.app/playlists/${firstKey}`)
+              axios.get(`https://art-website-server-production.up.railway.app/playlists/${firstKey}`)
               .then((response) => {
 
                 
