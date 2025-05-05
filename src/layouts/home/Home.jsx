@@ -23,7 +23,7 @@ export default function Home() {
   }, [userId]);
 
   useEffect(() => {
-    axios.get(`https://artuniverse-api.onrender.com/posts`)
+    axios.get(`${process.env.API_LINK}/posts`)
       .then(response => {
         
         const items = response.data;

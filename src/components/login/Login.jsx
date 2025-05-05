@@ -30,7 +30,7 @@ export default function Login() {
         e.preventDefault();
 
         
-            await axios.post('https://artuniverse-api.onrender.com/users/login', {
+            await axios.post('${process.env.API_LINK}/users/login', {
                 email: email,
                 password: password
             }).then( (response) => {

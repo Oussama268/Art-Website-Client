@@ -27,7 +27,7 @@ function Playlist({playlistId, playlist}) {
 
         
 
-        axios.get(`https://artuniverse-api.onrender.com/posts/${firstpostId}`)
+        axios.get(`${process.env.API_LINK}/posts/${firstpostId}`)
         .then((response) => {
 
             

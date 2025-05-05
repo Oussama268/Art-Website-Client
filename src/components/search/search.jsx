@@ -27,7 +27,7 @@ export default function Search() {
   }, [userId]);
 
   useEffect(() => {
-    axios.get(`https://artuniverse-api.onrender.com/posts/tags/${tag}`)
+    axios.get(`${process.env.API_LINK}/posts/tags/${tag}`)
       .then(response => {
         
         

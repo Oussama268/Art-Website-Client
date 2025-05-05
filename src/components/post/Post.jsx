@@ -60,7 +60,7 @@ export default function Post() {
 
 
     useEffect(() => {
-      axios.get(`https://artuniverse-api.onrender.com/tags/`)
+      axios.get(`${process.env.API_LINK}/tags/`)
           .then((result) => {
              
               setMyTags( Object.keys(result.data));
@@ -224,7 +224,7 @@ export default function Post() {
 
         
 
-        await axios.post("https://artuniverse-api.onrender.com/posts/create", formData, {
+        await axios.post("${process.env.API_LINK}/posts/create", formData, {
           headers: {
             'Content-Type': 'multipart/form-data', // Set the correct content type
           },

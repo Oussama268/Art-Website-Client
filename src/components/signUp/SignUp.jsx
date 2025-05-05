@@ -30,7 +30,7 @@ export default function SignUp() {
       e.preventDefault();
       
         await axios.post(
-          'https://artuniverse-api.onrender.com/users/sign',
+          '${process.env.API_LINK}/users/sign',
           { username: username, email: email, password: password }
          
         ).then((response) => {
